@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "created": "2026-02-04",
+    "version": "2.0.0",
+    "description": "Quiz questions dataset for HOLYWATER test task - Updated from Figma",
+    "totalQuestions": 5,
+    "languages": ["en", "fr", "de", "es"],
+    "questionTypes": ["single-select", "multiple-select", "bubble"],
+    "source": "Figma designs in /assets/figma/"
+  },
+  "questions": [
+    {
+      "id": "q1-language",
+      "type": "single-select",
+      "isRequired": true,
+      "autoSubmit": true,
+      "nextQuestion": "q2-gender",
+      "translations": {
+        "en": {
+          "title": "What is your\npreferred language?",
+          "subtitle": "Choose language",
+          "options": [
+            { "id": "lang-en", "label": "English" },
+            { "id": "lang-fr", "label": "French" },
+            { "id": "lang-de", "label": "German" },
+            { "id": "lang-es", "label": "Spanish" }
+          ]
+        },
+        "fr": {
+          "title": "Quelle est votre\nlangue préférée?",
+          "subtitle": "Choisissez la langue",
+          "options": [
+            { "id": "lang-en", "label": "Anglais" },
+            { "id": "lang-fr", "label": "Français" },
+            { "id": "lang-de", "label": "Allemand" },
+            { "id": "lang-es", "label": "Espagnol" }
+          ]
+        },
+        "de": {
+          "title": "Was ist Ihre\nbevorzugte Sprache?",
+          "subtitle": "Sprache wählen",
+          "options": [
+            { "id": "lang-en", "label": "Englisch" },
+            { "id": "lang-fr", "label": "Französisch" },
+            { "id": "lang-de", "label": "Deutsch" },
+            { "id": "lang-es", "label": "Spanisch" }
+          ]
+        },
+        "es": {
+          "title": "¿Cuál es tu\nidioma preferido?",
+          "subtitle": "Elegir idioma",
+          "options": [
+            { "id": "lang-en", "label": "Inglés" },
+            { "id": "lang-fr", "label": "Francés" },
+            { "id": "lang-de", "label": "Alemán" },
+            { "id": "lang-es", "label": "Español" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "q2-gender",
+      "type": "single-select-image",
+      "isRequired": true,
+      "autoSubmit": true,
+      "nextQuestion": "q3-age",
+      "translations": {
+        "en": {
+          "title": "What gender do\nyou identify with?",
+          "subtitle": "Please share how do you identify yourself",
+          "options": [
+            { "id": "gender-female", "label": "Female", "emoji": "👩" },
+            { "id": "gender-male", "label": "Male", "emoji": "👨" },
+            { "id": "gender-other", "label": "Other", "emoji": "😉" }
+          ]
+        },
+        "fr": {
+          "title": "Avec quel genre\nvous identifiez-vous?",
+          "subtitle": "Veuillez partager comment vous vous identifiez",
+          "options": [
+            { "id": "gender-female", "label": "Femme", "emoji": "👱‍♀️" },
+            { "id": "gender-male", "label": "Homme", "emoji": "🧑" },
+            { "id": "gender-other", "label": "Autre", "emoji": "😊" }
+          ]
+        },
+        "de": {
+          "title": "Mit welchem Geschlecht\nidentifizieren Sie sich?",
+          "subtitle": "Bitte teilen Sie uns mit, wie Sie sich identifizieren",
+          "options": [
+            { "id": "gender-female", "label": "Weiblich", "emoji": "👱‍♀️" },
+            { "id": "gender-male", "label": "Männlich", "emoji": "🧑" },
+            { "id": "gender-other", "label": "Andere", "emoji": "😊" }
+          ]
+        },
+        "es": {
+          "title": "¿Con qué\ngénero te identificas?",
+          "subtitle": "Por favor comparte cómo te identificas",
+          "options": [
+            { "id": "gender-female", "label": "Mujer", "emoji": "👱‍♀️" },
+            { "id": "gender-male", "label": "Hombre", "emoji": "🧑" },
+            { "id": "gender-other", "label": "Otro", "emoji": "😊" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "q3-age",
+      "type": "single-select",
+      "isRequired": true,
+      "autoSubmit": true,
+      "nextQuestion": "q4-hate",
+      "translations": {
+        "en": {
+          "title": "What is your age?",
+          "options": [
+            { "id": "age-18-29", "label": "18-29 years" },
+            { "id": "age-30-39", "label": "30-39 years" },
+            { "id": "age-40-49", "label": "40-49 years" },
+            { "id": "age-50plus", "label": "50+" }
+          ]
+        },
+        "fr": {
+          "title": "Quel âge avez-vous?",
+          "options": [
+            { "id": "age-18-29", "label": "18-29 ans" },
+            { "id": "age-30-39", "label": "30-39 ans" },
+            { "id": "age-40-49", "label": "40-49 ans" },
+            { "id": "age-50plus", "label": "50+" }
+          ]
+        },
+        "de": {
+          "title": "Wie alt sind Sie?",
+          "options": [
+            { "id": "age-18-29", "label": "18-29 Jahre" },
+            { "id": "age-30-39", "label": "30-39 Jahre" },
+            { "id": "age-40-49", "label": "40-49 Jahre" },
+            { "id": "age-50plus", "label": "50+" }
+          ]
+        },
+        "es": {
+          "title": "¿Cuál es tu edad?",
+          "options": [
+            { "id": "age-18-29", "label": "18-29 años" },
+            { "id": "age-30-39", "label": "30-39 años" },
+            { "id": "age-40-49", "label": "40-49 años" },
+            { "id": "age-50plus", "label": "50+" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "q4-hate",
+      "type": "multiple-select",
+      "isRequired": true,
+      "autoSubmit": false,
+      "minSelections": 1,
+      "maxSelections": 4,
+      "nextQuestion": "q5-topics",
+      "translations": {
+        "en": {
+          "title": "What do you hate the\nmost in a book?",
+          "titleHighlight": "hate",
+          "options": [
+            { "id": "hate-logic", "label": "Lack of logic" },
+            { "id": "hate-speed", "label": "A slow speed" },
+            { "id": "hate-humor", "label": "Lack of humor" },
+            { "id": "hate-ending", "label": "Way too generic ending" }
+          ]
+        },
+        "fr": {
+          "title": "Qu'est-ce que vous\ndétestez le plus dans un\nlivre?",
+          "titleHighlight": "détestez",
+          "options": [
+            { "id": "hate-logic", "label": "Manque de logique" },
+            { "id": "hate-speed", "label": "Une vitesse lente" },
+            { "id": "hate-humor", "label": "Manque d'humour" },
+            { "id": "hate-ending", "label": "Fin trop générique" }
+          ]
+        },
+        "de": {
+          "title": "Was hassen Sie am\nmeisten in einem Buch?",
+          "titleHighlight": "hassen",
+          "options": [
+            { "id": "hate-logic", "label": "Mangel an Logik" },
+            { "id": "hate-speed", "label": "Ein langsames Tempo" },
+            { "id": "hate-humor", "label": "Mangel an Humor" },
+            { "id": "hate-ending", "label": "Viel zu generisches Ende" }
+          ]
+        },
+        "es": {
+          "title": "¿Qué odias más\nen un libro?",
+          "titleHighlight": "odias",
+          "options": [
+            { "id": "hate-logic", "label": "Falta de lógica" },
+            { "id": "hate-speed", "label": "Una velocidad lenta" },
+            { "id": "hate-humor", "label": "Falta de humor" },
+            { "id": "hate-ending", "label": "Final demasiado genérico" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "q5-topics",
+      "type": "bubble",
+      "isRequired": true,
+      "autoSubmit": false,
+      "minSelections": 1,
+      "maxSelections": 3,
+      "nextQuestion": null,
+      "conditional": {
+        "dependsOn": "q3-age",
+        "mapping": {
+          "age-18-29": ["topic-romance", "topic-youngadult", "topic-badboy", "topic-billionaire", "topic-fantasy", "topic-vampire", "topic-darkromance", "topic-action"],
+          "age-30-39": ["topic-romance", "topic-billionaire", "topic-werewolf", "topic-royal", "topic-mystery", "topic-fantasy", "topic-action"],
+          "age-40-49": ["topic-romance", "topic-royal", "topic-mystery", "topic-historical", "topic-action", "topic-scifi"],
+          "age-50plus": ["topic-romance", "topic-royal", "topic-mystery", "topic-historical", "topic-action"]
+        }
+      },
+      "translations": {
+        "en": {
+          "title": "What are your\nfavorite topics?",
+          "subtitle": "Choose up to 3 topics you like",
+          "options": [
+            { "id": "topic-werewolf", "label": "Werewolf", "emoji": "🐺" },
+            { "id": "topic-action", "label": "Action", "emoji": "🔥" },
+            { "id": "topic-royal", "label": "Royal Obsession", "emoji": "👑" },
+            { "id": "topic-billionaire", "label": "Billionaire", "emoji": "💰" },
+            { "id": "topic-romance", "label": "Romance", "emoji": "🥰" },
+            { "id": "topic-youngadult", "label": "Young Adult", "emoji": "📚" },
+            { "id": "topic-badboy", "label": "Bad Boy", "emoji": "😈" },
+            { "id": "topic-fantasy", "label": "Fantasy", "emoji": "🧙‍♂️" },
+            { "id": "topic-scifi", "label": "Sci-Fi", "emoji": "👽" },
+            { "id": "topic-mystery", "label": "Mystery", "emoji": "🕵️‍♀️" },
+            { "id": "topic-historical", "label": "Historical", "emoji": "🏰" },
+            { "id": "topic-darkromance", "label": "Dark Romance", "emoji": "🖤" },
+            { "id": "topic-vampire", "label": "Vampire", "emoji": "🧛‍♀️" }
+          ]
+        },
+        "fr": {
+          "title": "Quels sont vos\nsujets préférés?",
+          "subtitle": "Choisissez jusqu'à 3 sujets que vous aimez",
+          "options": [
+            { "id": "topic-werewolf", "label": "Loup-garou", "emoji": "🐺" },
+            { "id": "topic-action", "label": "Action", "emoji": "🔥" },
+            { "id": "topic-royal", "label": "Obsession royale", "emoji": "👑" },
+            { "id": "topic-billionaire", "label": "Milliardaire", "emoji": "💰" },
+            { "id": "topic-romance", "label": "Romance", "emoji": "🥰" },
+            { "id": "topic-youngadult", "label": "Jeune adulte", "emoji": "📚" },
+            { "id": "topic-badboy", "label": "Mauvais garçon", "emoji": "😈" },
+            { "id": "topic-fantasy", "label": "Fantaisie", "emoji": "🧙‍♂️" },
+            { "id": "topic-scifi", "label": "Science-fiction", "emoji": "👽" },
+            { "id": "topic-mystery", "label": "Mystère", "emoji": "🕵️‍♀️" },
+            { "id": "topic-historical", "label": "Historique", "emoji": "🏰" },
+            { "id": "topic-darkromance", "label": "Romance noire", "emoji": "🖤" },
+            { "id": "topic-vampire", "label": "Vampire", "emoji": "🧛‍♀️" }
+          ]
+        },
+        "de": {
+          "title": "Was sind\nIhre Lieblingsthemen?",
+          "subtitle": "Wählen Sie bis zu 3 Themen aus, die Ihnen gefallen",
+          "options": [
+            { "id": "topic-werewolf", "label": "Werwolf", "emoji": "🐺" },
+            { "id": "topic-action", "label": "Action", "emoji": "🔥" },
+            { "id": "topic-royal", "label": "Königliche Obsession", "emoji": "👑" },
+            { "id": "topic-billionaire", "label": "Milliardär", "emoji": "💰" },
+            { "id": "topic-romance", "label": "Romantik", "emoji": "🥰" },
+            { "id": "topic-youngadult", "label": "Junge Erwachsene", "emoji": "📚" },
+            { "id": "topic-badboy", "label": "Böser Junge", "emoji": "😈" },
+            { "id": "topic-fantasy", "label": "Fantasy", "emoji": "🧙‍♂️" },
+            { "id": "topic-scifi", "label": "Science-Fiction", "emoji": "👽" },
+            { "id": "topic-mystery", "label": "Krimi", "emoji": "🕵️‍♀️" },
+            { "id": "topic-historical", "label": "Historisch", "emoji": "🏰" },
+            { "id": "topic-darkromance", "label": "Dark Romance", "emoji": "🖤" },
+            { "id": "topic-vampire", "label": "Vampir", "emoji": "🧛‍♀️" }
+          ]
+        },
+        "es": {
+          "title": "¿Cuáles son tus\ntemas favoritos?",
+          "subtitle": "Elige hasta 3 temas que te gusten",
+          "options": [
+            { "id": "topic-werewolf", "label": "Hombre lobo", "emoji": "🐺" },
+            { "id": "topic-action", "label": "Acción", "emoji": "🔥" },
+            { "id": "topic-royal", "label": "Obsesión real", "emoji": "👑" },
+            { "id": "topic-billionaire", "label": "Multimillonario", "emoji": "💰" },
+            { "id": "topic-romance", "label": "Romance", "emoji": "🥰" },
+            { "id": "topic-youngadult", "label": "Adulto joven", "emoji": "📚" },
+            { "id": "topic-badboy", "label": "Chico malo", "emoji": "😈" },
+            { "id": "topic-fantasy", "label": "Fantasía", "emoji": "🧙‍♂️" },
+            { "id": "topic-scifi", "label": "Ciencia ficción", "emoji": "👽" },
+            { "id": "topic-mystery", "label": "Misterio", "emoji": "🕵️‍♀️" },
+            { "id": "topic-historical", "label": "Histórico", "emoji": "🏰" },
+            { "id": "topic-darkromance", "label": "Romance oscuro", "emoji": "🖤" },
+            { "id": "topic-vampire", "label": "Vampiro", "emoji": "🧛‍♀️" }
+          ]
+        }
+      }
+    }
+  ]
+}

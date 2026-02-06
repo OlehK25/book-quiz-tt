@@ -1,26 +1,225 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #1f002b;
+  --color-card: #36173d;
+  --color-card-hover: #4a2150;
+
+  --color-primary: #e4229c;
+  --color-primary-highlight: #E4229B;
+
+  --color-success: #A8E6CF;
+  --color-disabled: #6e0e58;
+  --color-circle: #2A1034;
+
+  --color-soft-gray: #E8EAF2;
+  --color-purple-muted: #6D4376;
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #c4c8cc;
+  --color-text-purple-light: #ececfb;
+  --color-text-pink-light: #B8A1C9;
+
+  --font-display: 'Niconne', cursive;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ========================================= */
+  /* LAYOUT VARIABLES                          */
+  /* ========================================= */
+
+  /* Mobile Layout Defaults (< 768px) */
+  --container-max-screen: 100vw;
+  --container-max-content: 100%;
+  --spacing-container-x-fluid: 1.25rem;
+  /* 20px Fixed Horizontal Padding */
+  --spacing-container-y-fluid: 1.5rem;
+  /* 24px Fixed Vertical Padding */
+
+  /* ========================================= */
+  /* TYPOGRAPHY SYSTEM (Mobile Fluid -> Desktop Fixed) */
+  /* ========================================= */
+  /* 
+     Logic:
+     - Scales linearly from 320px (20rem) to 768px (48rem).
+     - At 768px and above, it hits the MAX value and stays fixed (Clamped).
+     Formula: clamp(MIN, calc(INTERCEPT + SLOPE * 1vw), MAX)
+  */
+
+  /* Display XL: 32px -> 56px */
+  --fs-display-xl: clamp(2rem, calc(0.928rem + 5.357vw), 3.5rem);
+
+  /* Heading XL: 24px -> 36px */
+  --fs-heading-xl: clamp(1.5rem, calc(0.964rem + 2.678vw), 2.25rem);
+
+  /* Heading LG: 20px -> 32px */
+  --fs-heading-lg: clamp(1.25rem, calc(0.714rem + 2.678vw), 2rem);
+
+  /* Heading MD: 18px -> 28px */
+  --fs-heading-md: clamp(1.125rem, calc(0.678rem + 2.232vw), 1.75rem);
+
+  /* Body XL: 16px -> 24px */
+  --fs-body-xl: clamp(1rem, calc(0.643rem + 1.785vw), 1.5rem);
+
+  /* Body LG: 15px -> 18px */
+  --fs-body-lg: clamp(0.9375rem, calc(0.803rem + 0.669vw), 1.125rem);
+
+  /* Body MD: 14px -> 17px */
+  --fs-body-md: clamp(0.875rem, calc(0.741rem + 0.669vw), 1.0625rem);
+
+  /* Body SM: 12px -> 14px */
+  --fs-body-sm: clamp(0.75rem, calc(0.66rem + 0.446vw), 0.875rem);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (min-width: 48rem) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* ========================================= */
+    /* DESKTOP LAYOUT OVERRIDES (>= 768px)      */
+    /* ========================================= */
+
+    --container-max-screen: 1920px;
+    --container-max-content: 1600px;
+
+    /* Spacing Formula: Matches 120rem (1920px) layout */
+    --spacing-container-x-fluid: clamp(4rem, 8.333vw, 10rem);
+    --spacing-container-y-fluid: 0;
+
+    /* 
+       NOTE: Typography is NOT overridden here. 
+       The :root clamp() formulas naturally cap at the MAX value 
+       for all viewports >= 768px, achieving the "Fixed on Desktop" effect.
+    */
   }
 }
 
+@layer base {
+
+  /* Global No-Wrap Rule per requirements */
+  *,
+  ::before,
+  ::after {
+    white-space: nowrap;
+  }
+
+  /* Exceptions for specific elements that MUST wrap */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  li,
+  blockquote,
+  figcaption {
+    white-space: normal;
+  }
+}
+
+@layer utilities {
+  .text-display-xl {
+    font-size: var(--fs-display-xl);
+    line-height: 1.1;
+  }
+
+  .text-heading-xl {
+    font-size: var(--fs-heading-xl);
+    line-height: 1.2;
+  }
+
+  .text-heading-lg {
+    font-size: var(--fs-heading-lg);
+    line-height: 1.3;
+  }
+
+  .text-heading-md {
+    font-size: var(--fs-heading-md);
+    line-height: 1.4;
+  }
+
+  .text-body-xl {
+    font-size: var(--fs-body-xl);
+    line-height: 1.5;
+  }
+
+  .text-body-lg {
+    font-size: var(--fs-body-lg);
+    line-height: 1.5;
+  }
+
+  .text-body-md {
+    font-size: var(--fs-body-md);
+    line-height: 1.5;
+  }
+
+  .text-body-sm {
+    font-size: var(--fs-body-sm);
+    line-height: 1.5;
+  }
+
+  /* Fluid Container Helpers */
+  .container-fluid {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: var(--spacing-container-x-fluid);
+  }
+}
+
+/* Base styles using the theme variables */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes slide-out-left {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+}
+
+.animate-out-left {
+  animation: slide-out-left 0.3s ease-out forwards;
+}
+
+/* Scrollbar hiding utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

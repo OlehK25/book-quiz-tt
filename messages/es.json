@@ -1,0 +1,36 @@
+{
+  "home": {
+    "title": "Quiz HOLYWATER",
+    "description": "Bienvenido a la aplicación de cuestionarios. ¡Paso 2: i18n está listo!",
+    "ready": "El cambio de idioma funciona ✅"
+  },
+  "locales": {
+    "en": "Inglés",
+    "fr": "Francés",
+    "de": "Alemán",
+    "es": "Español"
+  },
+  "common": {
+    "selectLanguage": "Seleccionar idioma",
+    "next": "Siguiente",
+    "back": "Atrás",
+    "submit": "Enviar"
+  },
+  "EmailStep": {
+    "title": "Email",
+    "description": "Enter your email to get full access",
+    "placeholder": "Your email",
+    "cta": "Next",
+    "invalid": "Invalid email",
+    "disclaimer": "By continuing I agree with Privacy policy and Terms of use."
+  },
+  "ThankYouStep": {
+    "title": "Thank you",
+    "message": "for supporting us and passing quiz",
+    "download": "Download my answers",
+    "retake": "Retake quiz"
+  },
+  "Loader": {
+    "text": "Finding collections for you..."
+  }
+}
