@@ -485,26 +485,34 @@ Referrer-Policy: strict-origin-when-cross-origin
 ## 📊 Архітектура Потоку Даних
 
 ```mermaid
-graph TD
-    A[User Visits /en] -->|Redirect| B[/en/quiz/1]
-    B --> C[QuizStore.initSession]
-    C --> D[Load quiz-questions.json]
-    D --> E[Render Question]
+graph TB
+    A[User Input Email] -->|Input| B[Encrypt Email]
     
-    E -->|User Selects Answer| F[store.setAnswer]
-    F --> G[Persist to localStorage]
-    G -->|Auto-advance| H[router.push /quiz/2]
+    B --> C1[Generate Random IV]
+    B --> C2[Fetch Session Key]
+    B --> C3[AES-GCM Encryption]
     
-    H --> E
+    C1 --> D[localStorage Encrypted]
+    C2 --> D
+    C3 --> D
     
-    E -->|All Questions Done| I[/quiz/loading]
-    I -->|5 seconds| J[/quiz/email]
+    D -->|Encrypted| E[Cipher Text]
     
-    J -->|Submit Email| K[encrypt + store.setEmail]
-    K --> L[/quiz/thank-you]
+    style A fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    style B fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style D fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style E fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
     
-    L -->|Download CSV| M[generateCSVContent]
-    L -->|Retake| N[clearStore + redirect /quiz/1]
+    subgraph SessionKey[Session Key Lifecycle]
+        SK1[Generated on Quiz Init]
+        SK2[Stored in sessionStorage]
+        SK3[Destroyed on Tab Close]
+        SK1 --> SK2 --> SK3
+    end
+    
+    style SK1 fill:#fce4ec,stroke:#c2185b
+    style SK2 fill:#fce4ec,stroke:#c2185b
+    style SK3 fill:#fce4ec,stroke:#c2185b
 ```
 
 ### Стратегія Збереження Стану
